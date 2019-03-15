@@ -1,0 +1,11 @@
+# requirements/prod.txt
+
+# Everything needed in production
+# Flask
+Flask==0.12.2
+
+# Deployment
+gunicorn==19.7.1
+
+# App command line
+Flask-Script==2.0.5

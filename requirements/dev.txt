@@ -1,0 +1,14 @@
+# requirements/dev.txt
+
+-r prod.txt
+
+# Debug
+Flask-DebugToolbar==0.10.1
+
+# Test
+coveralls==1.1
+pytest==3.2.1
+pytest-cov==2.5.1
+
+# Documentation
+Sphinx==1.6.3

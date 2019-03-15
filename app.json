@@ -1,0 +1,13 @@
+{
+    "name": "MD Analytics",
+    "description": "Python-Flask app, which displays social media accounts data analysis.",
+    "image": "heroku/python",
+    "repository": "https://github.com/BahatiPhill/md_analytics.git",
+    "env": {
+      "APP_SETTINGS":{
+        "description": "Application configuration setting.",
+        "value": "ProdConfig"
+      }
+    },
+    "keywords": ["python", "heroku", "social-media"]
+  }
