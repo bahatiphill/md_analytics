@@ -1,0 +1,20 @@
+language: python
+python:
+- '2.7'
+- '3.5'
+- '3.6'
+- nightly
+install: pip install -r requirements/dev.txt
+script: python -m pytest --cov=app tests/
+after_success:
+- pip install coveralls
+- coverage run --source=flask_oauthlib setup.py -q nosetests
+- coveralls
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: cNVx8ES/+fhQypEzTQDwFJzWIMli+JPjJNuAmC0+gx0McPmoKkF2PqV98Ye+QlpO9NZMGSNLme6+vuFiKoDChc+fajRsptIdXrZK71MpMX5XR61j18Ried0Q7iDtkdH7kxNqlarT0FnMYeOxn7ZhaMheXgViZau8xUH8Or5Jx1vc+pUS/D3LpgPsKPFAz9tuzirmqXg9APJ1W/DmQ16T5uE9eKcmCIvgHt7Ah60gg/5amp3VXKfgPBdZ040qfafic4rBPWMeGvh/RT71NYJsvNf9jo3cv2wUfP3cMPcQYTqduzGSSOmdDP4WgN2c7emhLtAdPAg/vSqP0rbQiRyWOIcXHiz+XDbx9br6ikOmH78AvSyY0utseNCit3cM56Tt9RsRg9W5vmKhMwvQmKzNDI+/4jkf0i/LfvRKp2q2Ap244t13fji10VtOccc180RlwkIVQbG1P9fR+gFxJl9IfCZRevVFeeTVmnR63r5scZzSHjGq3j8OZNQX5XjlpZzb3btRMYi/5OiWG+MKiJo2Ghru9lHfc0dRoUKgFa3xcZR7HblmdxQtW+hhVkZgXq5b0jKq8nNBQUZGNeKlWsPIxUPoZdCDrJPATdWQUiiINByPZlp7slaaNOfjpyy+qJ4lUVIbw2N/SEkiSPhzD05XQhBqgcTFgTywsWbfg8uwy2U=
+  app: ms-analytics-stage
